@@ -1,7 +1,15 @@
 
 def suma(text):
     numbers = _split(text)
-    res = _suma(numbers)
+    try:
+        numbers[0]
+    except:
+        raise NotImplementedError
+    print(numbers, "Numbers")
+    res = 0
+    while numbers:
+        a = numbers.pop(0)
+        res += a
     return res
 
 
@@ -14,8 +22,3 @@ def _split(text):
     return res
 
 
-def _suma(numbers):
-    s = 0
-    for num in numbers:
-        s += float(num)
-    return s

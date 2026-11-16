@@ -1,5 +1,6 @@
 from suma import suma
 from resta import resta
+from multiplicacion import multiplicacion
 
 def _split_resta(text):
     res = text.split("-")
@@ -12,12 +13,12 @@ comprobante = False
 res = 0.0
 
 if "+" in accion and "-" not in accion:
-    comprobante = True
     try:
         res = suma(accion)
+        comprobante = True
     except NotImplementedError:
         print("empanao, no puedo sumar eso")
-        
+
 elif "-" in accion and "+" not in accion:
     comprobante = True
     res = resta(accion)
